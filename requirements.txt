@@ -1,0 +1,7 @@
+numpy
+pandas
+protobuf
+requests
+streamlit
+streamlit-aggrid
+tqdm
