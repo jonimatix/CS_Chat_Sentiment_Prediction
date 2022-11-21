@@ -59,17 +59,18 @@ st.sidebar.title(":wrench: Options")
 # Get a random ChatID
 random_chatid = df.query('ChatType == "Support Chat"')['ChatID'].sample(1).values[0]
 
-
 # SELECTIONS
-TEXTBOX_CHATID = st.sidebar.text_input("Enter Chat ID", value=random_chatid)
+TEXTBOX_CHATID = st.sidebar.text_input("Enter Chat ID")
 
 
 def apply_df_filters(df, ChatID):
 
     # Chat ID
-    if not ChatID:
+    if not ChatID or ChatID is None or ChatID == "":
         # List is empty
-        df = df
+        # df = df
+        random_chatid = df.query('ChatType == "Support Chat"')['ChatID'].sample(1).values[0]
+        df = df.query('ChatID == @random_chatid')
     else:
         df = df.query('ChatID == @ChatID')
 
