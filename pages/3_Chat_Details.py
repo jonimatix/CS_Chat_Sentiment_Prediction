@@ -87,7 +87,9 @@ with body2:
     # st.markdown(df['html_text'][10], unsafe_allow_html=True,)
     with col1:
         st.subheader("Chat Transcript for Chat ID {}".format(TEXTBOX_CHATID))
-        st.markdown(df['html_text'].values[0], unsafe_allow_html=True,)
+        
+        df_t = df_orig.copy()
+        st.markdown(df_t['html_text'].values[0], unsafe_allow_html=True,)
 
     with col2:
         df_t = df_orig.copy()
