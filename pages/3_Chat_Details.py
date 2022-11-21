@@ -61,7 +61,7 @@ random_chatid = df.query('ChatType == "Support Chat"')['ChatID'].sample(1).value
 
 # SELECTIONS
 TEXTBOX_CHATID = st.sidebar.text_input("Enter Chat ID")
-
+TEXTBOX_CHATID = random_chatid if TEXTBOX_CHATID == "" else TEXTBOX_CHATID
 
 def apply_df_filters(df, ChatID):
 
