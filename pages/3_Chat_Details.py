@@ -113,7 +113,8 @@ with body2:
 
         st.image(f'./Images/{sent}.jpg')
 
-    if df_orig.Sentiment.values[0] == "Positive" and df_orig.Positive_Score.values[0] >= 0.8:
-        st.balloons()
-
+    try:
+        if df_orig.Sentiment.values[0] == "Positive" and df_orig.Positive_Score.values[0] >= 0.8:
+            st.balloons()
+    except: pass
 
