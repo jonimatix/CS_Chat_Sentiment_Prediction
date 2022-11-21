@@ -7,11 +7,6 @@ import datetime as dt
 from datetime import timedelta, datetime
 from tqdm import tqdm
 
-from sqlalchemy import create_engine
-from configparser import ConfigParser
-import pyodbc
-import psycopg2
-import psycopg2.extras
 import os
 import gc
 import time
@@ -27,6 +22,13 @@ logging.basicConfig(filename='ApplicationLog.log',
 
 
 def config(filename='database.ini', section='postgresql'):
+
+    from sqlalchemy import create_engine
+    from configparser import ConfigParser
+    import pyodbc
+    import psycopg2
+    import psycopg2.extras
+    
     # create a parser
     parser = ConfigParser()
 
@@ -48,6 +50,13 @@ def config(filename='database.ini', section='postgresql'):
 
 def connect_insert(df, table):
     # """Connect to the PostgreSQL database server"""
+
+    from sqlalchemy import create_engine
+    from configparser import ConfigParser
+    import pyodbc
+    import psycopg2
+    import psycopg2.extras
+
     conn = None
 
     try:
@@ -97,6 +106,13 @@ def connect_insert(df, table):
 
 def connect(sql='SELECT version()'):
     # """Connect to the PostgreSQL database server"""
+
+    from sqlalchemy import create_engine
+    from configparser import ConfigParser
+    import pyodbc
+    import psycopg2
+    import psycopg2.extras
+
     conn = None
 
     try:
@@ -136,7 +152,14 @@ def connect(sql='SELECT version()'):
 
 def connect_insert_sqlserver(df, table, verbose=0):
     """Connect to the SQL Server database server"""
+
+    from sqlalchemy import create_engine
+    from configparser import ConfigParser
+    import pyodbc
+    import psycopg2
+    import psycopg2.extras
     cnxn = None
+
     VERBOSE = verbose
 
     try:
@@ -209,6 +232,13 @@ def connect_insert_sqlserver(df, table, verbose=0):
 
 def connect_insert_audit_sqlserver(df, table, verbose=0):
     """Connect to the SQL Server database server"""
+
+    from sqlalchemy import create_engine
+    from configparser import ConfigParser
+    import pyodbc
+    import psycopg2
+    import psycopg2.extras
+
     cnxn = None
     VERBOSE = verbose
 
@@ -267,6 +297,13 @@ def connect_insert_audit_sqlserver(df, table, verbose=0):
 
 def connect_insert_chatsentiment_sqlserver(df, table, verbose=0):
     """Connect to the SQL Server database server"""
+
+    from sqlalchemy import create_engine
+    from configparser import ConfigParser
+    import pyodbc
+    import psycopg2
+    import psycopg2.extras
+
     cnxn = None
     VERBOSE = verbose
 
