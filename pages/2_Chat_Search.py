@@ -5,14 +5,9 @@ from io import BytesIO
 import pandas as pd
 import numpy as np
 import warnings
-import matplotlib.pyplot as plt
-import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
-
-from configparser import ConfigParser
-import pyodbc
 
 from datetime import datetime, timedelta
 import os
